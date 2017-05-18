@@ -2599,6 +2599,46 @@ namespace PowerSDR
             this.tpAudioCard1.Size = new System.Drawing.Size(592, 318);
             this.tpAudioCard1.TabIndex = 0;
             this.tpAudioCard1.Text = "Primary";
+			// 
+			// groupBoxTS1
+			// 
+			this.groupBoxTS1.Controls.Add(this.udIQCorrection);
+			this.groupBoxTS1.Location = new System.Drawing.Point(472, 8);
+			this.groupBoxTS1.Name = "groupBoxTS1";
+			this.groupBoxTS1.Size = new System.Drawing.Size(104, 56);
+			this.groupBoxTS1.TabIndex = 51;
+			this.groupBoxTS1.TabStop = false;
+			this.groupBoxTS1.Text = "IQ Correction";
+			this.groupBoxTS1.Enter += new System.EventHandler(this.groupBoxTS1_Enter);
+			// 
+			// udIQCorrection
+			// 
+			this.udIQCorrection.Increment = new System.Decimal(new int[] {
+																			 1,
+																			 0,
+																			 0,
+																			 0});
+			this.udIQCorrection.Location = new System.Drawing.Point(16, 24);
+			this.udIQCorrection.Maximum = new System.Decimal(new int[] {
+																		   32,
+																		   0,
+																		   0,
+																		   0});
+			this.udIQCorrection.Minimum = new System.Decimal(new int[] {
+																		   32,
+																		   0,
+																		   0,
+																		   -2147483648});
+			this.udIQCorrection.Name = "udIQCorrection";
+			this.udIQCorrection.Size = new System.Drawing.Size(72, 20);
+			this.udIQCorrection.TabIndex = 51;
+			this.toolTip1.SetToolTip(this.udIQCorrection, "Corrects sample shift for Left and Right Soundcard input.  ");
+			this.udIQCorrection.Value = new System.Decimal(new int[] {
+																		 0,
+																		 0,
+																		 0,
+																		 0});
+			this.udIQCorrection.ValueChanged += new System.EventHandler(this.udIQCorrection_ValueChanged);
             // 
             // tpVAC
             // 
