@@ -1007,6 +1007,7 @@ namespace PowerSDR
         private Label lblWaterfallLevels;
         private CheckBoxTS chkSplitOffOnModeChange;
 		private System.ComponentModel.IContainer components;
+		private System.Windows.Forms.CheckBoxTS chkExtended;		//[patch_1]
 
 		#endregion
 
@@ -1214,6 +1215,7 @@ namespace PowerSDR
             this.tpGeneral = new System.Windows.Forms.TabPage();
             this.tcGeneral = new System.Windows.Forms.TabControl();
             this.tpGeneralHardware = new System.Windows.Forms.TabPage();
+            this.chkExtended = new System.Windows.Forms.CheckBoxTS();
             this.grpHWSoftRock = new System.Windows.Forms.GroupBoxTS();
             this.lblGenSoftRockCenterFreq = new System.Windows.Forms.LabelTS();
             this.udSoftRockCenterFreq = new System.Windows.Forms.NumericUpDownTS();
@@ -2481,6 +2483,7 @@ namespace PowerSDR
             // tpGeneralHardware
             // 
             this.tpGeneralHardware.BackColor = System.Drawing.SystemColors.Control;
+            this.tpGeneralHardware.Controls.Add(this.chkExtended);
             this.tpGeneralHardware.Controls.Add(this.grpHWSoftRock);
             this.tpGeneralHardware.Controls.Add(this.grpGeneralDDS);
             this.tpGeneralHardware.Controls.Add(this.grpGeneralModel);
@@ -2494,6 +2497,17 @@ namespace PowerSDR
             this.tpGeneralHardware.Size = new System.Drawing.Size(592, 318);
             this.tpGeneralHardware.TabIndex = 0;
             this.tpGeneralHardware.Text = "Hardware Config";
+            // 
+            // chkExtended
+            // 
+            this.chkExtended.Image = null;
+            this.chkExtended.Location = new System.Drawing.Point(336, 182);
+            this.chkExtended.Name = "chkExtended";
+            this.chkExtended.Size = new System.Drawing.Size(104, 16);
+            this.chkExtended.TabIndex = 24;
+            this.chkExtended.Text = "Extended Freq.";
+            this.toolTip1.SetToolTip(this.chkExtended, "Check to enable Extended Frequency Range");
+            this.chkExtended.CheckedChanged += new System.EventHandler(this.chkExtended_CheckedChanged);
             // 
             // grpHWSoftRock
             // 
@@ -25043,6 +25057,12 @@ namespace PowerSDR
 		private void IQClear_Click(object sender, System.EventArgs e)
 		{
 		
+		}
+		
+		//[patch_12
+		private void chkExtended_CheckedChanged(object sender, System.EventArgs e)
+		{
+			console.Extended = chkExtended.Checked;
 		}
 
         private void chkVAC2DirectIQCal_CheckedChanged(object sender, EventArgs e)
