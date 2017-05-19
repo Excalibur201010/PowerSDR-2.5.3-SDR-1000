@@ -34,7 +34,7 @@ namespace PowerSDR
 {
     class TitleBar
     {
-        public const string BUILT_BY = "Built by [CALLSIGN]";
+        public const string BUILT_BY = "Excalibur SDR-1000";
 
         public const string VERSION_SUFFIX = " Base"; // Make this "" for production
 
